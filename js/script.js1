@@ -1,15 +1,28 @@
-// Pulsenettec Live Data Integration
-// ---------------------------------
-// This script fetches live public data from Globalping (latency)
-// and Climatiq (sustainability metrics).
+// Pulsenettec Live Data Integration (script.js1)
 
 // 1. Globalping Latency
 fetch("https://api.globalping.io/v1/ping?target=cdn.jsdelivr.net")
   .then(res => res.json())
   .then(data => {
-    // Adjust based on actual API response structure
-    document.getElementById("latency").innerHTML =
-      "Global average latency: " + data.average + " ms";
+    const latencyElement = document.getElementById("latency");
+    const latency = data.average;
+
+    let statusClass = "";
+    let icon = "";
+
+    if (latency < 100) {
+      statusClass = "status-good";
+      icon = "✅";
+    } else if (latency < 200) {
+      statusClass = "status-warning";
+      icon = "⚠️";
+    } else {
+      statusClass = "status-bad";
+      icon = "❌";
+    }
+
+    latencyElement.className = statusClass;
+    latencyElement.innerHTML = `<span class="status-icon">${icon}</span> Global average latency: ${latency} ms`;
   })
   .catch(err => {
     document.getElementById("latency").innerHTML = "Error fetching latency data.";
@@ -31,10 +44,28 @@ fetch("https://api.climatiq.io/estimate", {
 })
   .then(res => res.json())
   .then(data => {
-    document.getElementById("carbon").innerHTML =
-      "Estimated CO₂ emissions: " + data.co2e + " kg";
+    const carbonElement = document.getElementById("carbon");
+    const emissions = data.co2e;
+
+    let statusClass = "";
+    let icon = "";
+
+    if (emissions < 50) {
+      statusClass = "status-good";
+      icon = "✅";
+    } else if (emissions < 150) {
+      statusClass = "status-warning";
+      icon = "⚠️";
+    } else {
+      statusClass = "status-bad";
+      icon = "❌";
+    }
+
+    carbonElement.className = statusClass;
+    carbonElement.innerHTML = `<span class="status-icon">${icon}</span> Estimated CO₂ emissions: ${emissions} kg`;
   })
   .catch(err => {
     document.getElementById("carbon").innerHTML = "Error fetching carbon data.";
     console.error("Carbon error:", err);
   });
+
