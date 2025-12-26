@@ -79,15 +79,4 @@ h1, h2 {
 }
 
 ul {
-  list-style-type: square;
-  margin-left: 1.5em;
-}
-
-/* Footer */
-footer {
-  background: #0a3d62;
-  color: #fff;
-  text-align: center;
-  padding: 1em;
-  margin-top: 2em;
-}
+  list-style-type
