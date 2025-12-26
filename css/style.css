@@ -136,6 +136,78 @@ ul {
   font-weight: bold;
 }
 
+/* Legend Section */
+#legend {
+  margin-top: 1.5em;
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+}
+
+#legend span {
+  margin: 0 1em;
+  font-weight: bold;
+}
+
+/* Cross-links Section */
+.next-links {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.next-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.next-links li {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+.next-links a {
+  color: #0a3d62;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.next-links a:hover {
+  color: #1e5799;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background: #0a3d62;
+  color: #fff;
+  padding: 0.7em 1.5em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.contact-form button:hover {
+  background: #1e5799;
+}
+
 /* Footer */
 footer {
   background: #0a3d62;
@@ -154,5 +226,10 @@ footer {
 
   #live-data div {
     width: 90%;
+  }
+
+  .next-links li {
+    display: block;
+    margin: 0.5em 0;
   }
 }
