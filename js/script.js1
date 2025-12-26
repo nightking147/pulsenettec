@@ -1,0 +1,40 @@
+// Pulsenettec Live Data Integration
+// ---------------------------------
+// This script fetches live public data from Globalping (latency)
+// and Climatiq (sustainability metrics).
+
+// 1. Globalping Latency
+fetch("https://api.globalping.io/v1/ping?target=cdn.jsdelivr.net")
+  .then(res => res.json())
+  .then(data => {
+    // Adjust based on actual API response structure
+    document.getElementById("latency").innerHTML =
+      "Global average latency: " + data.average + " ms";
+  })
+  .catch(err => {
+    document.getElementById("latency").innerHTML = "Error fetching latency data.";
+    console.error("Latency error:", err);
+  });
+
+// 2. Climatiq Sustainability Metrics
+// Replace YOUR_API_KEY with your Climatiq key
+fetch("https://api.climatiq.io/estimate", {
+  method: "POST",
+  headers: {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    emission_factor: { activity_id: "electricity-energy-source_grid_mix" },
+    parameters: { energy: 100, energy_unit: "kWh" }
+  })
+})
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("carbon").innerHTML =
+      "Estimated CO₂ emissions: " + data.co2e + " kg";
+  })
+  .catch(err => {
+    document.getElementById("carbon").innerHTML = "Error fetching carbon data.";
+    console.error("Carbon error:", err);
+  });
