@@ -9,22 +9,22 @@
 <body>
   <header>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="mission.html">Mission</a>
-      <a href="vision.html">Vision</a>
-      <a href="roadmap.html">Roadmap</a>
-      <a href="about.html">About</a>
-      <a href="partners.html">Partners</a>
-      <a href="contact.html">Contact</a>
+      <a href="#hero">Home</a>
+      <a href="#mission">Mission</a>
+      <a href="#vision">Vision</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#about">About</a>
+      <a href="#partners">Partners</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="hero" class="hero">
       <h1>Pulsenettec — The Global Tech Pulse</h1>
       <p>“Pulsenettec strives to build a borderless, trustworthy, sustainable, and intelligent digital nervous system for humanity.”</p>
-      <a href="mission.html" class="cta">Explore Our Mission</a>
+      <a href="#mission" class="cta">Explore Our Mission</a>
     </section>
 
     <!-- Mission Section -->
@@ -33,15 +33,78 @@
       <p>We advance universal access, seamless interoperability, absolute security and privacy, near‑zero latency, energy‑efficient infrastructure, and self‑healing networks.</p>
     </section>
 
+    <!-- Vision Section -->
+    <section id="vision">
+      <h2>Vision</h2>
+      <p>Pulsenettec envisions a future where networking technology transcends boundaries, creating a truly global digital nervous system for humanity.</p>
+    </section>
+
     <!-- Roadmap Section -->
     <section id="roadmap">
       <h2>Roadmap</h2>
       <ul>
-        <li><strong>Foundation:</strong> Open-source repo and public docs</li>
-        <li><strong>Product:</strong> Global networking dashboard (connectivity, privacy, latency, sustainability, autonomy)</li>
-        <li><strong>Partnerships:</strong> NGOs, governments, enterprises</li>
+        <li><strong>Foundation:</strong> Open‑source repository and public documentation.</li>
+        <li><strong>Product:</strong> Global networking dashboard covering connectivity, privacy, latency, sustainability, autonomy.</li>
+        <li><strong>Partnerships:</strong> Alliances with NGOs, governments, and enterprises.</li>
       </ul>
     </section>
 
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Pulsenettec</h2>
+      <p>Pulsenettec is a visionary initiative dedicated to building a borderless, trustworthy, sustainable, and intelligent digital nervous system for humanity. We believe networking technology should serve as the pulse of global progress, connecting people, communities, and ideas without barriers.</p>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners">
+      <h2>Our Partners</h2>
+      <p>We collaborate with NGOs, governments, and enterprises to advance sustainable connectivity worldwide.</p>
+      <p>If your organization shares our vision, we welcome you to join us in shaping the future of networking. Reach out via our <a href="#contact">Contact section</a> to start the conversation.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
     <!-- Live Data Section -->
-    
+    <section id="live-data">
+      <h2>Live Global Metrics</h2>
+      <div>
+        <h3>Global Internet Latency</h3>
+        <p id="latency">Loading latency data...</p>
+      </div>
+      <div>
+        <h3>Sustainability Metrics</h3>
+        <p id="carbon">Loading carbon data...</p>
+      </div>
+    </section>
+
+    <!-- Legend Section -->
+    <section id="legend">
+      <span class="status-good">✅ Good</span>
+      <span class="status-warning">⚠️ Moderate</span>
+      <span class="status-bad">❌ Poor</span>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Pulsenettec — The Global Tech Pulse</p>
+  </footer>
+
+  <!-- Use script.js1 for live metrics -->
+  <script src="js/script.js1"></script>
+</body>
+</html>
